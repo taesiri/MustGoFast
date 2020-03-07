@@ -25,6 +25,11 @@ This works by first training a deep neural network and then replacing some parts
 
 There are a handful of techniques to remove redundancy in a trained neural network. For exampl after training, one can prune/delete some unimportant parts of the network, that's it, deleting some connection in the network. The key challenge in this to find candidate connections.
 
+**Two Major Category for weight pruning**:
+
+* The General, Non-Structured Pruning: Removing any connection and weights. It has no limitation for delete a connection but sometimes this method interferes with Highly Parallel and Vectorize implementation of Neural Networks, like in GPUs, which hinders the maximum speed up.
+* Structured pruning: Systematically remove some connection and weights, like removing an entire channel, layer, etc.
+
 **List of Papers:**
 
 1. Optimal Brain Damage. (1989) [[PDF](http://papers.nips.cc/paper/250-optimal-brain-damage.pdf)]
@@ -34,6 +39,10 @@ There are a handful of techniques to remove redundancy in a trained neural netwo
 1. Learning both Weights and Connections for Efficient Neural Networks. (2015) [[Arxiv](https://arxiv.org/abs/1506.02626)]
 1. Deep Compression: Compressing Deep Neural Networks with Pruning, Trained Quantization and Huffman Coding. (2015) [[Arxiv](https://arxiv.org/abs/1510.00149)]
 1. Compressing Neural Networks with the Hashing Trick. (2015) [[Arxiv](https://arxiv.org/abs/1504.04788)]
+1. Dynamic Network Surgery for Efficient DNNs. 2016 [[Arxiv](https://arxiv.org/abs/1608.04493)]
+1. Channel Pruning for Accelerating Very Deep Neural Networks. 2017 [[Arxiv](https://arxiv.org/abs/1707.06168)]
+1. AMC: AutoML for Model Compression and Acceleration on Mobile Devices. 2018 [[Arxiv](https://arxiv.org/abs/1802.03494)]
+1. AutoCompress: An Automatic DNN Structured Pruning Framework for Ultra-High Compression Rates. (2019) [[Arxiv](https://arxiv.org/abs/1907.03141)]
 
 ---
 
