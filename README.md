@@ -24,6 +24,9 @@ This works in either of these ways:
 1. MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications. (2017) [[Abstract](#shallownetwokid1)] [[Arxiv](https://arxiv.org/abs/1704.04861)]
 1. ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices. (2017) [[Abstract](#shallownetwokid2)] [[Arxiv](https://arxiv.org/abs/1707.01083)]
 1. MobileNetV2: Inverted Residuals and Linear Bottlenecks. (2018) [[Abstract](#shallownetwokid3)] [[Arxiv](https://arxiv.org/abs/1801.04381)]
+1. ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design. (2018) [[Abstract](#shallownetwokid4)] [[Arxiv](https://arxiv.org/abs/1807.11164)]
+1. Searching for MobileNetV3. (2019) [[Abstract](#shallownetwokid5)] [[Arxiv](https://arxiv.org/abs/1905.02244)]
+
 
 #### Abstract
 
@@ -50,6 +53,14 @@ We introduce an extremely computation-efficient CNN architecture namedShuffleNet
 ### 2018 | MobileNetV2: Inverted Residuals and Linear Bottlenecks <a id="shallownetwokid3"></a>
 
 In this paper we describe a new mobile architecture, MobileNetV2, thatimproves the state of the art performance of mobile models on multiple tasksand benchmarks as well as across a spectrum of different model sizes. We alsodescribe efficient ways of applying these mobile models to object detection ina novel framework we call SSDLite. Additionally, we demonstrate how to buildmobile semantic segmentation models through a reduced form of DeepLabv3 whichwe call Mobile DeepLabv3.
+
+### 2018 | ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design <a id="shallownetwokid4"></a>
+
+Currently, the neural network architecture design is mostly guided by the\emph{indirect} metric of computation complexity, i.e., FLOPs. However, the\emph{direct} metric, e.g., speed, also depends on the other factors such asmemory access cost and platform characterics. Thus, this work proposes toevaluate the direct metric on the target platform, beyond only consideringFLOPs. Based on a series of controlled experiments, this work derives severalpractical \emph{guidelines} for efficient network design. Accordingly, a newarchitecture is presented, called \emph{ShuffleNet V2}. Comprehensive ablationexperiments verify that our model is the state-of-the-art in terms of speed andaccuracy tradeoff.
+
+### 2019 | Searching for MobileNetV3 <a id="shallownetwokid5"></a>
+
+We present the next generation of MobileNets based on a combination ofcomplementary search techniques as well as a novel architecture design.MobileNetV3 is tuned to mobile phone CPUs through a combination ofhardware-aware network architecture search (NAS) complemented by the NetAdaptalgorithm and then subsequently improved through novel architecture advances.This paper starts the exploration of how automated search algorithms andnetwork design can work together to harness complementary approaches improvingthe overall state of the art. Through this process we create two new MobileNetmodels for release: MobileNetV3-Large and MobileNetV3-Small which are targetedfor high and low resource use cases. These models are then adapted and appliedto the tasks of object detection and semantic segmentation. For the task ofsemantic segmentation (or any dense pixel prediction), we propose a newefficient segmentation decoder Lite Reduced Atrous Spatial Pyramid Pooling(LR-ASPP). We achieve new state of the art results for mobile classification,detection and segmentation. MobileNetV3-Large is 3.2\% more accurate onImageNet classification while reducing latency by 15\% compared to MobileNetV2.MobileNetV3-Small is 4.6\% more accurate while reducing latency by 5\% comparedto MobileNetV2. MobileNetV3-Large detection is 25\% faster at roughly the sameaccuracy as MobileNetV2 on COCO detection. MobileNetV3-Large LR-ASPP is 30\%faster than MobileNetV2 R-ASPP at similar accuracy for Cityscapes segmentation.
 
 ---
 
