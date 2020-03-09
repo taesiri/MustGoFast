@@ -13,11 +13,43 @@ A collection of papers related to making DNNs faster, either by network compress
 
 ## Compact Layers / Shallow Networks <a id="compactshallow"></a>
 
-This works by first training a deep neural network and then replacing some parts, or even all, with a shallower or more compact network. The shallow part must mimic the behavior of the original part.
+This works in either of these ways:
+
+1. Replace some part of a trained network with a shallower or compact counterpart
+1. Create a New network based on some "Compact" layers. for example, instead of using 3x3 convolutional layers, we use 1x1 layers.
 
 **List of Papers:**
 
-1. SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size. (2016) [[Arxiv](https://arxiv.org/abs/1602.07360)][[Github](https://github.com/forresti/SqueezeNet)]
+1. SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size. (2016) [[Abstract](#shallownetwokid0)] [[Arxiv](https://arxiv.org/abs/1602.07360)]
+1. MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications. (2017) [[Abstract](#shallownetwokid1)] [[Arxiv](https://arxiv.org/abs/1704.04861)]
+1. ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices. (2017) [[Abstract](#shallownetwokid2)] [[Arxiv](https://arxiv.org/abs/1707.01083)]
+1. MobileNetV2: Inverted Residuals and Linear Bottlenecks. (2018) [[Abstract](#shallownetwokid3)] [[Arxiv](https://arxiv.org/abs/1801.04381)]
+
+#### Abstract
+
+![Overview-CompactLayers](imgs/overview/overview-nasnetmobilenetshufflenetmobilenet2.png)
+
+### 2016 | SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size <a id="shallownetwokid0"></a>
+
+![SqueezeNet](imgs/squeezenet/squeezenet-firemodule.png)
+
+Recent research on deep neural networks has focused primarily on improvingaccuracy. For a given accuracy level, it is typically possible to identifymultiple DNN architectures that achieve that accuracy level. With equivalentaccuracy, smaller DNN architectures offer at least three advantages: (1) Smaller DNNs require less communication across servers during distributedtraining. (2) Smaller DNNs require less bandwidth to export a new model fromthe cloud to an autonomous car. (3) Smaller DNNs are more feasible to deploy onFPGAs and other hardware with limited memory. To provide all of theseadvantages, we propose a small DNN architecture called SqueezeNet. SqueezeNetachieves AlexNet-level accuracy on ImageNet with 50x fewer parameters.Additionally, with model compression techniques we are able to compressSqueezeNet to less than 0.5MB (510x smaller than AlexNet).
+
+### 2017 | MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications <a id="shallownetwokid1"></a>
+
+![MobileNet](imgs/mobilenet/mobilenetv1-cnn.png)
+
+We present a class of efficient models called MobileNets for mobile andembedded vision applications. MobileNets are based on a streamlinedarchitecture that uses depth-wise separable convolutions to build light weightdeep neural networks. We introduce two simple global hyper-parameters thatefficiently trade off between latency and accuracy. These hyper-parametersallow the model builder to choose the right sized model for their applicationbased on the constraints of the problem. We present extensive experiments onresource and accuracy tradeoffs and show strong performance compared to otherpopular models on ImageNet classification. We then demonstrate theeffectiveness of MobileNets across a wide range of applications and use casesincluding object detection, finegrain classification, face attributes and largescale geo-localization.
+
+### 2017 | ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices <a id="shallownetwokid2"></a>
+
+![ShuffleNet](imgs/shufflenet/shufflenet-overview.png)
+
+We introduce an extremely computation-efficient CNN architecture namedShuffleNet, which is designed specially for mobile devices with very limitedcomputing power (e.g., 10-150 MFLOPs). The new architecture utilizes two newoperations, pointwise group convolution and channel shuffle, to greatly reducecomputation cost while maintaining accuracy. Experiments on ImageNetclassification and MS COCO object detection demonstrate the superiorperformance of ShuffleNet over other structures, e.g. lower top-1 error(absolute 7.8%) than recent MobileNet on ImageNet classification task, underthe computation budget of 40 MFLOPs. On an ARM-based mobile device, ShuffleNetachieves ~13x actual speedup over AlexNet while maintaining comparableaccuracy.
+
+### 2018 | MobileNetV2: Inverted Residuals and Linear Bottlenecks <a id="shallownetwokid3"></a>
+
+In this paper we describe a new mobile architecture, MobileNetV2, thatimproves the state of the art performance of mobile models on multiple tasksand benchmarks as well as across a spectrum of different model sizes. We alsodescribe efficient ways of applying these mobile models to object detection ina novel framework we call SSDLite. Additionally, we demonstrate how to buildmobile semantic segmentation models through a reduced form of DeepLabv3 whichwe call Mobile DeepLabv3.
 
 ---
 
@@ -59,7 +91,7 @@ Quantization refers to a set of techniques in which we reduce the number of bits
 
 ### 2016 | XNOR-Net: ImageNet Classification Using Binary Convolutional Neural Networks <a id="xnornet"></a>
 
-![Kiku](imgs/xnor/xnor-overview.png)
+![xnornet](imgs/xnor/xnor-overview.png)
 
 This method doesn't rely on a pre-trained network. It introduces a novel method for learning Binary neural networks from scratch. This works by estimating binary value of weights by scaling the original weight. It stores the original weight for backpropagation and training, but in the inference stage, it only uses the binarized version of the weight.
 
